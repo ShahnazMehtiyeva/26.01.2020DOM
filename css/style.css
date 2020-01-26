@@ -57,7 +57,7 @@
     margin: 0;
     width: 0;
     overflow: hidden; 
-    transition: 0.25s all;
+    transition: 0.4s all;
 }
 
 .active3{

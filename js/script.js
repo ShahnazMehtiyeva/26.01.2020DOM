@@ -65,16 +65,24 @@
 // let headers=document.querySelectorAll('.header');
 // let ptag=document.querySelectorAll('.content p');
 // let icons=document.querySelectorAll('.header i');
+// let lastActiveIndex;
 // for (let k  = 0; k < headers.length; k++) {
 
 //     headers[k].addEventListener('click',function () {
 //         for (let h = 0; h < ptag.length; h++) {
-//             ptag[h].classList.remove('active2');
-//             icons[h].classList.replace('fa-minus','fa-plus')
+//             if(lastActiveIndex!=k){
+//                 ptag[h].classList.remove('active2');
+//                 icons[h].classList.replace('fa-minus','fa-plus')
+//             }
 //         }
-
-//         ptag[k].classList.add('active2');
-//         icons[k].classList.replace('fa-plus','fa-minus')
+//         if(ptag[k].classList.contains('active2')){
+//             ptag[k].classList.remove('active2');
+//             icons[h].classList.replace('fa-minus','fa-plus')
+//         }else{
+//             lastActiveIndex=k;
+//             ptag[k].classList.add('active2');
+//             icons[k].classList.replace('fa-plus','fa-minus')
+//         }
     
 //     });
     
@@ -87,9 +95,9 @@ let texts=document.querySelectorAll('.text');
 let lastindex;
 for (let i = 0; i < icons.length; i++) {
     icons[i].addEventListener('click',function(){
-        
+
         for (let h = 0; h < texts.length; h++) {
-            if(h!=lastindex){
+            if(i!=lastindex){
                 texts[h].classList.remove('active3');
             }
         }
